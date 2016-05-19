@@ -1,6 +1,7 @@
 {
   "name": "portalts",
-  "version": "0.1.0",
+  "version": "0.1.1",
+  "repository": "https://github.com/portalTS/portalTS-CLI",
   "dependencies": {
     "adm-zip": "^0.4.7",
     "colors": "^1.1.2",
