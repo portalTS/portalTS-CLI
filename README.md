@@ -1,4 +1,4 @@
-# portalTSCLI
+# portalTS-CLI
 CLI utility for portalTS
 
 
