@@ -1,5 +1,11 @@
 # portalTS-CLI
-CLI utility for portalTS
+CLI utility for the portalTS project (https://github.com/portalTS/portalTS)
+
+
+## Installation
+```bash
+npm install -g portalts
+```
 
 
 
