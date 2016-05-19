@@ -1,0 +1,14 @@
+{
+  "name": "portalts",
+  "version": "0.1.0",
+  "dependencies": {
+    "adm-zip": "^0.4.7",
+    "colors": "^1.1.2",
+    "inquirer": "^1.0.2",
+    "ora": "^0.2.3",
+    "ronin": "^0.1.2"
+  },
+  "bin": {
+    "portalts": "./bin/portalts"
+  }
+}
