@@ -1,0 +1,26 @@
+import express = require('express');
+var router = express.Router();
+
+import ppackage = require('../../../core/ppackage');
+import cmsAPI = require('../../cms/cmsAPI');
+
+
+export class IndexModule implements ppackage.Package {
+    isRoot(): boolean {
+        return false;
+    }
+
+    init(_app:express.Express):void {
+        router.get('/', (req, res) => {
+            cmsAPI.render(req, res, {title: 'Hello World!', html:'Hello, World!!!'});
+        });
+    }
+
+    hasRouter(): boolean {
+        return true;
+    }
+
+    getRouter(): express.Router {
+        return router;
+    }
+}

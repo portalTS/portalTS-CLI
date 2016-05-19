@@ -25,6 +25,10 @@ var Create = Command.extend({
         // and the views subfolder
         fs.mkdirSync(path + '/views');
         //I can add a standard helloWorld controller
+        fs.readFile(__dirname+'/../../examples/controller.txt', function(err, data) {
+            var str = data.toString();
+            fs.writeFileSync(path+'/controllers/index.ts', str);
+        });
 
         var descr = {
             name: name,
@@ -38,7 +42,15 @@ var Create = Command.extend({
         var modulesPath = process.cwd() + '/pmodules/modules.json';
         fs.readFile(modulesPath, function(err, data) {
             var modules = JSON.parse(data.toString());
-            modules.modules.push(name);
+            var index = -1;
+            for (var i = 0; i<modules.modules.length; i++) {
+                if (modules.modules[i]=='404') {
+                    index = i;
+                    break;
+                }
+            }
+            if (index==-1) modules.modules.push(name);
+            else modules.modules.splice(index, 0, name);
             fs.writeFileSync(modulesPath, JSON.stringify(modules, null, 4));
         });
     }
