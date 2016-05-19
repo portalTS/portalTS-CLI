@@ -52,6 +52,7 @@ var Create = Command.extend({
             if (index==-1) modules.modules.push(name);
             else modules.modules.splice(index, 0, name);
             fs.writeFileSync(modulesPath, JSON.stringify(modules, null, 4));
+            console.log("Module created!");
         });
     }
 });
